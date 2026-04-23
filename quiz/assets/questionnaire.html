@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Découvrez votre style de communication</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="libs/reveal/reveal.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides" id="questions-container">
+      <section>
+        <div class="callOut">
+          <h1>Quel est votre style <br>personnel de communication?</h1>
+          <p>Votre style de communication correspond à la manière dont les autres vous perçoivent et les inférences qu'ils font concernant vos <strong>motivations</strong>, vos <strong>attitudes</strong>, vos <strong>intérêts</strong> et vos <strong>intentions</strong>.</p>
+          <p>Pour chacune des <strong>25 questions</strong> suivantes, indiquez l'énoncé qui vous représente le mieux dans votre contexte de travail.</p>
+          <p>Utilisez les flèches pour naviguer entre les questions.</p>
+          <button class="btn" onclick="Reveal.right();">Débuter</button>
+          <p class="note">Source: Cormier, S. (2018). La communication et la gestion (3e édition). Québec: Presses de l'Université du Québec.</p>
+        </div>
+      </section>
+
+      <section id="completion-section">
+        <div class="callOut">
+          <h2>Vous avez parcouru l'ensemble du questionnaire</h2>
+          <p>Vous devez <strong>répondre à toute les questions</strong> afin <br>de connaître votre style de communication.</p>
+          <p>Pour réviser vos réponses, utilisez les flèches ou<br> appuyer sur 'ESC' pour voir l'ensemble des questions.</p>
+          <div class="control">
+            <button class="btn make" onclick="displayRadioValue();">Voir le résultat</button>
+          </div>
+          <div class="message"></div>
+        </div>
+      </section>
+
+      <section class="resultat">
+        <h2 class="chart-result-title">Votre profil de communication : <span class="votretype"></span></h2>
+        <div class="chart-hint">
+          <div class="chart-hint-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" focusable="false">
+              <path fill="#000000" fill-rule="evenodd" d="M10 3a7 7 0 100 14 7 7 0 000-14zm-9 7a9 9 0 1118 0 9 9 0 01-18 0zm8-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm.01 8a1 1 0 102 0V9a1 1 0 10-2 0v5z"/>
+            </svg>
+          </div>
+          <div class="chart-hint-text">Survolez les portions du graphique pour afficher les résultats de chaque style.</div>
+        </div>
+        <table class="profil">
+          <tr><th class="verticalHeader">Caractéristiques/Types</th><th class="analytique">Analytique</th><th class="directif">Directif</th><th class="aimable">Aimable</th><th class="expressif">Expressif</th></tr>
+          <tr><th class="verticalHeader">Réaction :</th><td class="analytique">Lente</td><td class="directif">Rapide</td><td class="aimable">Modérée</td><td class="expressif">Vive</td></tr>
+          <tr><th class="verticalHeader">Effort maximal pour :</th><td class="analytique"> Organiser</td><td class="directif">Contrôler</td><td class="aimable">Entrer en relation</td><td class="expressif">S’impliquer</td></tr>
+          <tr><th class="verticalHeader">Centré sur:</th><td class="analytique">Les processus</td><td class="directif">La tâche</td><td class="aimable">Les personnes</td><td class="expressif">L’interaction</td></tr>
+          <tr><th class="verticalHeader">Préoccupation minimale pour :</th><td class="analytique"> L’émotivité et les sentiments personnels</td><td class="directif">L’analyse et la réflexion théorique</td><td class="aimable">La logique formelle</td><td class="expressif">La routine et la conformité</td></tr>
+          <tr><th class="verticalHeader">Cadre de référence :</th><td class="analytique">L’historique</td><td class="directif">Le présent</td><td class="aimable">Le présent</td><td class="expressif">Le futur</td></tr>
+          <tr><th class="verticalHeader">Action : </th><td class="analytique">Prudence</td><td class="directif">Directe</td><td class="aimable">Soutien</td><td class="expressif">Évite l’isolement</td></tr>
+          <tr><th class="verticalHeader">Tendance à éviter :</th><td class="analytique"> L’implication personnelle</td><td class="directif">L’inaction</td><td class="aimable"> Les conflits</td><td class="expressif">L’isolement</td></tr>
+          <tr><th class="verticalHeader">Besoin de :</th><td class="analytique"> Vérité et pertinence</td><td class="directif">Contrôle et de résultats</td><td class="aimable">Coopération et d’acceptation</td><td class="expressif">Stimulation et d’interaction</td></tr>
+        </table>
+        <div class="ContainChart">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="controlPrint">
+          <button class="btn print icon-print-only" onclick="imprimeResultat()" aria-label="Imprimer" title="Imprimer"></button>
+        </div>
+      </section>
+
+      <section class="resultat">
+        <h2>Votre profil de communication : <span class="votretype"></span></h2>
+        <table class="profilcomplet">
+          <tr><th class="verticalHeader">Caractéristiques/Types</th><th class="analytique2">Analytique</th><th class="directif2">Directif</th><th class="aimable2">Aimable</th><th class="expressif2">Expressif</th></tr>
+          <tr><th class="verticalHeader">Réaction :</th><td class="analytique2">Lente</td><td class="directif2">Rapide</td><td class="aimable2">Modérée</td><td class="expressif2">Vive</td></tr>
+          <tr><th class="verticalHeader">Effort maximal pour :</th><td class="analytique2"> Organiser</td><td class="directif2">Contrôler</td><td class="aimable2">Entrer en relation</td><td class="expressif2">S’impliquer</td></tr>
+          <tr><th class="verticalHeader">Centré sur:</th><td class="analytique2">Les processus</td><td class="directif2">La tâche</td><td class="aimable2">Les personnes</td><td class="expressif2">L’interaction</td></tr>
+          <tr><th class="verticalHeader">Préoccupation minimale pour :</th><td class="analytique2"> L’émotivité et les sentiments personnels</td><td class="directif2">L’analyse et la réflexion théorique</td><td class="aimable2">La logique formelle</td><td class="expressif2">La routine et la conformité</td></tr>
+          <tr><th class="verticalHeader">Cadre de référence :</th><td class="analytique2">L’historique</td><td class="directif2">Le présent</td><td class="aimable2">Le présent</td><td class="expressif2">Le futur</td></tr>
+          <tr><th class="verticalHeader">Action : </th><td class="analytique2">Prudence</td><td class="directif2">Directe</td><td class="aimable2">Soutien</td><td class="expressif2">Évite l’isolement</td></tr>
+          <tr><th class="verticalHeader">Tendance à éviter :</th><td class="analytique2"> L’implication personnelle</td><td class="directif2">L’inaction</td><td class="aimable2"> Les conflits</td><td class="expressif2">L’isolement</td></tr>
+          <tr><th class="verticalHeader">Besoin de :</th><td class="analytique2"> Vérité et pertinence</td><td class="directif2">Contrôle et de résultats</td><td class="aimable2">Coopération et d’acceptation</td><td class="expressif2">Stimulation et d’interaction</td></tr>
+        </table>
+      </section>
+    </div>
+  </div>
+  <div id="print-report" aria-hidden="true"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="libs/reveal/reveal.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

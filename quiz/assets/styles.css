@@ -1,0 +1,489 @@
+* {
+  font-family: "Overpass", sans-serif;
+}
+
+body {
+  color: hsla(215, 5%, 50%, 1);
+  font-family: "Overpass", sans-serif;
+}
+
+.reveal .backgrounds {
+  background: rgb(210, 210, 210);
+  background: linear-gradient(
+    30deg,
+    rgba(210, 210, 210, 1) 0%,
+    rgba(246, 248, 250, 1) 27%,
+    rgba(222, 222, 222, 1) 100%
+  );
+}
+
+p {
+  font-family: "Overpass", sans-serif;
+  font-weight: 200;
+  font-size: 1.4rem;
+  line-height: 1.1;
+}
+
+div.callOut p {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+h1 {
+  color: hsla(215, 5%, 10%, 1);
+  margin-top: 2rem;
+  margin-bottom: 1.8rem;
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+}
+
+h2 {
+  margin-top: 20px;
+  padding: 0 20px;
+  text-align: center;
+  width: 100%;
+  font-family: "Overpass", sans-serif;
+}
+
+h2 span.surtitre {
+  color: #096edf;
+  display: block;
+  font-size: 0.9rem;
+  font-variant: small-caps;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.chart-result-title {
+  margin-bottom: 4px;
+}
+
+.chart-hint {
+  margin: 2px auto 14px;
+  width: fit-content;
+  max-width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.92rem;
+  color: hsla(215, 25%, 35%, 1);
+  line-height: 1.2;
+}
+
+.chart-hint-text {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.chart-hint-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  flex: 0 0 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-hint-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-hint-icon circle,
+.chart-hint-icon line {
+  stroke: #096edf;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-hint-icon circle:last-child {
+  fill: #096edf;
+  stroke: #096edf;
+}
+
+.control {
+  display: block;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.controlPrint {
+  position: absolute;
+  left: 16px;
+  bottom: -14px;
+  margin-top: 0;
+  text-align: left;
+  z-index: 5;
+}
+
+section.resultat {
+  position: relative;
+}
+
+button.btn {
+  border-radius: 5px;
+  background-color: #096edf;
+  border: 0;
+  color: #cee4fd;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 14px 38px 12px 38px;
+  box-shadow: 0 3px 3px -2px hsla(0, 0%, 0%, 0.35);
+}
+
+button.btn:hover {
+  background-color: #096edf;
+  color: white;
+}
+
+button.btn::after {
+  content: "\f0a9";
+  font-family: FontAwesome;
+  color: #54a0f8;
+  padding-left: 13px;
+}
+
+button.make::after {
+  content: "\f200";
+  font-family: FontAwesome;
+  color: #54a0f8;
+  padding-left: 13px;
+}
+
+button.print::after {
+  content: "\f02f";
+  font-family: FontAwesome;
+  color: #54a0f8;
+  padding-left: 13px;
+}
+
+button.icon-print-only {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.icon-print-only::after {
+  padding-left: 0;
+  font-size: 18px;
+  color: #cee4fd;
+}
+
+button.btn:hover::after {
+  transition: color 1s ease;
+  color: white;
+}
+
+div.message {
+  margin: 5px auto;
+  width: 60%;
+}
+
+div.message p {
+  font-size: 1rem;
+}
+
+.fa-exclamation-triangle {
+  color: orange;
+}
+
+div.deck {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+div.deck p {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+p.note {
+  font-size: 0.7rem;
+  margin-top: 30px;
+  margin-bottom: auto;
+}
+
+div.deck > div {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  height: 200px;
+  font-family: "Overpass", sans-serif;
+  display: block;
+  background-color: hsla(0, 0%, 95%, 1);
+  border: 2px solid #096edf;
+  border-radius: 13px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+  position: relative;
+}
+
+label:hover {
+  background-color: hsla(0, 0%, 100%, 1);
+  cursor: pointer;
+}
+
+label:hover::after {
+  color: gray;
+  font-family: FontAwesome;
+  border: 2px solid #096edf;
+  content: "\f103";
+  font-size: 24px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 5px -2px hsla(0, 0%, 0%, 0.25);
+  transition: background 0.5s ease;
+}
+
+input[type="radio"]:checked + label {
+  background: #096edf;
+  color: hsla(215, 0%, 100%, 1);
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.25);
+}
+
+input[type="radio"]:checked + label::after {
+  color: #33cc33;
+  font-family: FontAwesome;
+  border: 2px solid #096edf;
+  content: "\f00c";
+  font-size: 24px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 5px -2px hsla(0, 0%, 0%, 0.25);
+  transition: background 0.5s ease;
+}
+
+.ContainChart {
+  width: 400px;
+  float: left;
+}
+
+table.profil {
+  width: 400px;
+  font-family: "Overpass", sans-serif;
+  float: left;
+}
+
+table.profilcomplet {
+  width: 790px;
+  font-family: "Overpass", sans-serif;
+}
+
+th,
+td {
+  padding: 4px;
+  text-align: left;
+  vertical-align: text-top;
+}
+
+th.verticalHeader {
+  text-align: right;
+  font-weight: 200;
+}
+
+.analytique,
+.aimable,
+.expressif,
+.directif {
+  display: none;
+}
+
+#print-report {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: Letter portrait;
+    margin: 0.6in;
+  }
+
+  html,
+  body,
+  .reveal-viewport,
+  .reveal .backgrounds {
+    background: #fff !important;
+  }
+
+  body {
+    margin: 0;
+    color: #111;
+    font-size: 11pt;
+    font-family: "Source Sans 3", "Source Sans Pro", Arial, sans-serif;
+  }
+
+  .reveal {
+    display: none !important;
+  }
+
+  .controlPrint {
+    display: none !important;
+  }
+
+  #print-report {
+    display: block !important;
+    font-family: "Source Sans 3", "Source Sans Pro", Arial, sans-serif;
+  }
+
+  #print-report * {
+    font-family: "Source Sans 3", "Source Sans Pro", Arial, sans-serif !important;
+  }
+
+  .print-report-inner {
+    width: 100%;
+  }
+
+  .print-header {
+    border-bottom: 1px solid #d1d5db;
+    margin-bottom: 0.2in;
+    padding-bottom: 0.08in;
+  }
+
+  #print-report .print-header h1 {
+    margin: 0;
+    font-size: 27pt;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: left;
+    color: #111;
+    font-family: "Overpass", Arial, sans-serif !important;
+  }
+
+  .print-header p {
+    margin: 0.06in 0 0;
+    font-size: 11pt;
+    font-weight: 400;
+    color: #4b5563;
+  }
+
+  .print-page {
+    margin-top: 0.14in;
+    break-inside: avoid;
+  }
+
+  .print-page h1 {
+    margin: 0 0 0.06in;
+    font-size: 14pt;
+    font-weight: 600;
+    text-align: left;
+    color: #111;
+  }
+
+  .print-subtitle {
+    margin: 0 0 0.12in;
+    font-size: 13pt;
+    font-weight: 400;
+    color: #374151;
+    line-height: 1.35;
+  }
+
+  .print-answer-list {
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.28in !important;
+  }
+
+  .print-answer-item {
+    margin: 0 !important;
+    break-inside: avoid;
+  }
+
+  .print-question-title {
+    margin: 0 0 0.03in;
+    font-size: 15.5pt !important;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .print-answer-text {
+    margin: 0.05in 0 0;
+    font-size: 12.5pt !important;
+    font-weight: 400 !important;
+    color: #374151;
+    line-height: 1.35;
+  }
+
+  .print-choice-letter {
+    font-weight: 700 !important;
+    color: #111;
+  }
+
+  .print-chart-page {
+    break-before: page;
+  }
+
+  .print-chart-wrapper {
+    width: 6.3in;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #print-chart-canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .print-profile-table-wrapper {
+    margin-top: 0.2in;
+  }
+
+  .print-profile-table {
+    width: 100% !important;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .print-profile-table th,
+  .print-profile-table td {
+    border: 1px solid #d1d5db;
+    padding: 7px 8px;
+    vertical-align: top;
+    font-size: 11.5pt !important;
+    font-weight: 400 !important;
+    line-height: 1.25;
+    color: #111;
+  }
+
+  .print-profile-table th.verticalHeader {
+    width: 31%;
+    text-align: left;
+    font-weight: 700 !important;
+    color: #111;
+    background: #f8fafc;
+  }
+}

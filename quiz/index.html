@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz de style de communication</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Overpass", sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #ffffff;
+        overflow: hidden;
+      }
+
+      .frame-shell {
+        width: min(100vw, 730px);
+        height: min(100vh, 449px);
+        overflow: hidden;
+        position: relative;
+      }
+
+      iframe {
+        width: 800px;
+        height: 450px;
+        border: 0;
+        transform-origin: top left;
+      }
+    </style>
+  </head>
+
+  <body spellcheck="false">
+    <div class="frame-shell" id="frameShell">
+      <iframe
+        id="dynamicIframe"
+      src="assets/questionnaire.html"
+        allowfullscreen="allowfullscreen"
+        allow="geolocation *; microphone *; camera *; midi *; encrypted-media *"
+        title="Conteneur du quiz"
+        scrolling="no"
+      ></iframe>
+    </div>
+  </body>
+
+  <script>
+    const QUIZ_WIDTH = 800;
+    const QUIZ_HEIGHT = 450;
+
+    function scaleIframeToFit() {
+      const shell = document.getElementById("frameShell");
+      const iframe = document.getElementById("dynamicIframe");
+      if (!shell || !iframe) {
+        return;
+      }
+
+      const bounds = shell.getBoundingClientRect();
+      const scale = Math.min(bounds.width / QUIZ_WIDTH, bounds.height / QUIZ_HEIGHT);
+
+      iframe.style.transform = `scale(${scale})`;
+    }
+
+    window.addEventListener("DOMContentLoaded", scaleIframeToFit, false);
+    window.addEventListener("resize", scaleIframeToFit, false);
+  </script>
+</html>

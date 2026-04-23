@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "title": "Quand je suis à mon meilleur, mon interlocuteur me décrirait comme une personne qui est…",
+      "choices": [
+        { "letter": "A", "text": "Imaginative, stimulante et persuasive", "value": "Expressif" },
+        { "letter": "B", "text": "Compréhensive, encourageante et diplomate", "value": "Aimable" },
+        { "letter": "C", "text": "Pratique, centrée sur les résultats et efficace", "value": "Directif" },
+        { "letter": "D", "text": "Logique, systématique et précise", "value": "Analytique" }
+      ]
+    },
+    {
+      "title": "Quand je dois présenter un projet devant un comité,",
+      "choices": [
+        { "letter": "A", "text": "je me prépare à présenter mon projet de façon brève et concise.", "value": "Directif" },
+        { "letter": "B", "text": "je me prépare soigneusement, je prépare des documents à l'appui et j'essaie de prévoir les objections.", "value": "Analytique" },
+        { "letter": "C", "text": "je me prépare bien, mais je m'inquiète du climat qui va régner dans ce comité.", "value": "Aimable" },
+        { "letter": "D", "text": "je me prépare de façon globale parce que je sais que je vais trouver les bons mots une fois en situation.", "value": "Expressif" }
+      ]
+    }
+  ]
+}

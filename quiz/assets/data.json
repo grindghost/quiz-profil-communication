@@ -1,0 +1,229 @@
+{
+  "questions": [
+    {
+      "title": "Quand je suis à mon meilleur, mon interlocuteur me décrirait comme une personne qui est…",
+      "choices": [
+        { "letter": "A", "text": "Imaginative, stimulante et persuasive", "value": "Expressif" },
+        { "letter": "B", "text": "Compréhensive, encourageante et diplomate", "value": "Aimable" },
+        { "letter": "C", "text": "Pratique, centrée sur les résultats et efficace", "value": "Directif" },
+        { "letter": "D", "text": "Logique, systématique et précise", "value": "Analytique" }
+      ]
+    },
+    {
+      "title": "Quand je dois présenter un projet devant un comité,",
+      "choices": [
+        { "letter": "A", "text": "je me prépare à présenter mon projet de façon brève et concise.", "value": "Directif" },
+        { "letter": "B", "text": "je me prépare soigneusement, je prépare des documents à l'appui et j'essaie de prévoir les objections.", "value": "Analytique" },
+        { "letter": "C", "text": "je me prépare bien, mais je m'inquiète du climat qui va régner dans ce comité.", "value": "Aimable" },
+        { "letter": "D", "text": "je me prépare de façon globale parce que je sais que je vais trouver les bons mots une fois en situation.", "value": "Expressif" }
+      ]
+    },
+    {
+      "title": "Je suis le plus convaincant quand…",
+      "choices": [
+        { "letter": "A", "text": "j'ai assez de temps pour présenter une argumentation solide.", "value": "Analytique" },
+        { "letter": "B", "text": "j'ai un objectif concret et réaliste à faire valoir.", "value": "Directif" },
+        { "letter": "C", "text": "j'ai un point de vue original.", "value": "Expressif" },
+        { "letter": "D", "text": "j'ai l'estime et le respect de mes interlocuteurs.", "value": "Aimable" }
+      ]
+    },
+    {
+      "title": "Quand je dois régler un problème, j'ai tendance à …",
+      "choices": [
+        { "letter": "A", "text": "obtenir suffisamment d'information pour choisir la meilleure solution.", "value": "Analytique" },
+        { "letter": "B", "text": "laisser la solution émerger à l'intérieur de moi.", "value": "Expressif" },
+        { "letter": "C", "text": "choisir rapidemment la solution la plus pratique.", "value": "Directif" },
+        { "letter": "D", "text": "trouver une solution qui me convient et qui est acceptable pour les autres.", "value": "Aimable" }
+      ]
+    },
+    {
+      "title": "Quand je dois donner du feedback critique,",
+      "choices": [
+        { "letter": "A", "text": "je documente mon feedback avec des données et des faits précis.", "value": "Analytique" },
+        { "letter": "B", "text": "je formule mon feedback de façon à ne pas heurter l'autre.", "value": "Aimable" },
+        { "letter": "C", "text": "je trouve une façon orginale de présenter mon feedback.", "value": "Expressif" },
+        { "letter": "D", "text": "je dis les choses comme elles sont.", "value": "Directif" }
+      ]
+    },
+    {
+      "title": "Quand je fais une présentation,",
+      "choices": [
+        { "letter": "A", "text": "je présente tous les points importants dans un ordre logique.", "value": "Analytique" },
+        { "letter": "B", "text": "je donne plus ou moins un spectacle afin de capter l'attention.", "value": "Expressif" },
+        { "letter": "C", "text": "je mets l'accent sur la compréhension et l'implication des participants.", "value": "Aimable" },
+        { "letter": "D", "text": "je vais droit au but.", "value": "Directif" }
+      ]
+    },
+    {
+      "title": "Si on m'attribuait des défauts, on dirait probablement que je suis…",
+      "choices": [
+        { "letter": "A", "text": "contrôlé et lent.", "value": "Analytique" },
+        { "letter": "B", "text": "indiscipliné et excité.", "value": "Expressif" },
+        { "letter": "C", "text": "autoritaire et impatient.", "value": "Directif" },
+        { "letter": "D", "text": "trop sensible et trop concerné par les autres.", "value": "Aimable" }
+      ]
+    },
+    {
+      "title": "Si j'étais un tableau, les gens me verraient comme…",
+      "choices": [
+        { "letter": "A", "text": "un déjeuner sur l'herbe.", "value": "Aimable" },
+        { "letter": "B", "text": "un jardin impeccable.", "value": "Analytique" },
+        { "letter": "C", "text": "une montagne.", "value": "Directif" },
+        { "letter": "D", "text": "un volcan en éruption.", "value": "Expressif" }
+      ]
+    },
+    {
+      "title": "Répondre à la question 8 m'a paru…",
+      "choices": [
+        { "letter": "A", "text": "intéressant.", "value": "Expressif" },
+        { "letter": "B", "text": "quelque peu ridicule.", "value": "Directif" },
+        { "letter": "C", "text": "incongru.", "value": "Analytique" },
+        { "letter": "D", "text": "intrigant.", "value": "Aimable" }
+      ]
+    },
+    {
+      "title": "Dans une discussion,",
+      "choices": [
+        { "letter": "A", "text": "je tiens compte des idées différentes des miennes.", "value": "Aimable" },
+        { "letter": "B", "text": "je défends mon point de vue avec insistance.", "value": "Directif" },
+        { "letter": "C", "text": "j'argumente de façon pertinente.", "value": "Analytique" },
+        { "letter": "D", "text": "je présente souvent les choses sous un angle différent.", "value": "Expressif" }
+      ]
+    },
+    {
+      "title": "Pour moi, les discussions de fond sont…",
+      "choices": [
+        { "letter": "A", "text": "souvent une perte de temps (du pelletage de nuages).", "value": "Directif" },
+        { "letter": "B", "text": "intéressantes si on peut vider une question à la fois.", "value": "Analytique" },
+        { "letter": "C", "text": "intéressantes si les gens ne se prennent pas trop au sérieux.", "value": "Expressif" },
+        { "letter": "D", "text": "riches si les gens cherchent à se comprendre plutôt qu'à demeurer sur leur position.", "value": "Aimable" }
+      ]
+    },
+    {
+      "title": "Dans une situation conflictuelle où je suis impliquée personnellement,",
+      "choices": [
+        { "letter": "A", "text": "Je fais ou propose des compromis.", "value": "Aimable" },
+        { "letter": "B", "text": "je ne peux prévoir ma réaction.", "value": "Expressif" },
+        { "letter": "C", "text": "je trouve une solution au conflit.", "value": "Directif" },
+        { "letter": "D", "text": "j'attends que la poussière retombe.", "value": "Analytique" }
+      ]
+    },
+    {
+      "title": "Quand je suis témoin d'une altercation entre deux collaborateurs,",
+      "choices": [
+        { "letter": "A", "text": "je tente de les amener à se comprendre.", "value": "Aimable" },
+        { "letter": "B", "text": "je m'implique personnellement.", "value": "Expressif" },
+        { "letter": "C", "text": "je m'abstiens d'intervenir pour éviter d'envenimer la situation.", "value": "Analytique" },
+        { "letter": "D", "text": "j'essaie de leur faire entendre raison.", "value": "Directif" }
+      ]
+    },
+    {
+      "title": "Quand je suis impliqué personnellement dans un conflit, mon modèle général de réaction est…",
+      "choices": [
+        { "letter": "A", "text": "d'amener l'autre à voir le problème tel qu'il est.", "value": "Directif" },
+        { "letter": "B", "text": "d'analyser avec l'autre la situation de différents points de vue.", "value": "Expressif" },
+        { "letter": "C", "text": "d'investir beaucoup d'énergie pour trouver un compromis viable.", "value": "Aimable" },
+        { "letter": "D", "text": "de laisser le temps faire son œuvre.", "value": "Analytique" }
+      ]
+    },
+    {
+      "title": "La dimension interpersonnelle que j'aurais principalement avantage à développer est:",
+      "choices": [
+        { "letter": "A", "text": "l'écoute.", "value": "Directif" },
+        { "letter": "B", "text": "l'affirmation de soi.", "value": "Aimable" },
+        { "letter": "C", "text": "l'expression affective.", "value": "Analytique" },
+        { "letter": "D", "text": "le contrôle de mes réactions.", "value": "Expressif" }
+      ]
+    },
+    {
+      "title": "Quand j'interagis avec quelqu'un,",
+      "choices": [
+        { "letter": "A", "text": "je fais peu de gestes.", "value": "Analytique" },
+        { "letter": "B", "text": "mes gestes sont plutôt harmonieux.", "value": "Aimable" },
+        { "letter": "C", "text": "mes gestes peuvent être saccadés.", "value": "Directif" },
+        { "letter": "D", "text": "mes gestes sont amples et nombreux.", "value": "Expressif" }
+      ]
+    },
+    {
+      "title": "Quand quelqu'un m'expose un problème personnel,",
+      "choices": [
+        { "letter": "A", "text": "je cherche à dédramatiser en envisageant une autre façon de voir les choses.", "value": "Expressif" },
+        { "letter": "B", "text": "je cherche une solution.", "value": "Directif" },
+        { "letter": "C", "text": "j'écoute attentivement et je reformule ce que je comprends.", "value": "Aimable" },
+        { "letter": "D", "text": "je pose beaucoup de questions afin d'avoir une vision complète de la situation.", "value": "Analytique" }
+      ]
+    },
+    {
+      "title": "On me perçoit comme quelqu'un qui…",
+      "choices": [
+        { "letter": "A", "text": "est souvent imprévisible.", "value": "Expressif" },
+        { "letter": "B", "text": "valorise les relations interpersonnelles.", "value": "Aimable" },
+        { "letter": "C", "text": "exige la rigueur et la logique.", "value": "Analytique" },
+        { "letter": "D", "text": "se montre très compétitif.", "value": "Directif" }
+      ]
+    },
+    {
+      "title": "Dans mes interactions, il m'arrive souvent de déplorer le fait que les gens…",
+      "choices": [
+        { "letter": "A", "text": "ne sont pas conscients de leurs sentiments.", "value": "Aimable" },
+        { "letter": "B", "text": "parlent sans réfléchir.", "value": "Analytique" },
+        { "letter": "C", "text": "manquent d'imagination.", "value": "Expressif" },
+        { "letter": "D", "text": "parlent pour ne rien dire.", "value": "Directif" }
+      ]
+    },
+    {
+      "title": "Quand je suis stressé ou défensif, je deviens…",
+      "choices": [
+        { "letter": "A", "text": "émotif", "value": "Aimable" },
+        { "letter": "B", "text": "impulsif", "value": "Expressif" },
+        { "letter": "C", "text": "exagéréement contrôlé", "value": "Analytique" },
+        { "letter": "D", "text": "dominateur", "value": "Directif" }
+      ]
+    },
+    {
+      "title": "Je défends mes idées…",
+      "choices": [
+        { "letter": "A", "text": "avec tact.", "value": "Aimable" },
+        { "letter": "B", "text": "avec des arguments logiques.", "value": "Analytique" },
+        { "letter": "C", "text": "avec entrain.", "value": "Expressif" },
+        { "letter": "D", "text": "avec force.", "value": "Directif" }
+      ]
+    },
+    {
+      "title": "Quand j'ai une décision à prendre,",
+      "choices": [
+        { "letter": "A", "text": "je tiens compte des personnes impliquées.", "value": "Aimable" },
+        { "letter": "B", "text": "j'opte pour la décision la plus pratique.", "value": "Directif" },
+        { "letter": "C", "text": "j'essaie de prendre la décision la plus éclairée.", "value": "Analytique" },
+        { "letter": "D", "text": "je me fie à mon intuition.", "value": "Expressif" }
+      ]
+    },
+    {
+      "title": "Quand j'écoute quelqu'un,",
+      "choices": [
+        { "letter": "A", "text": "j'ai tendance à l'interrompre pour donner mon idée.", "value": "Directif" },
+        { "letter": "B", "text": "j'essaie de bien saisir son point de vue.", "value": "Aimable" },
+        { "letter": "C", "text": "je l'écoute en pensant à autre chose.", "value": "Expressif" },
+        { "letter": "D", "text": "je lui laisse le temps d'exprimer sa pensée.", "value": "Analytique" }
+      ]
+    },
+    {
+      "title": "Quand on me donne du feedback critique,",
+      "choices": [
+        { "letter": "A", "text": "je me défends.", "value": "Directif" },
+        { "letter": "B", "text": "j'essaie de comprendre.", "value": "Aimable" },
+        { "letter": "C", "text": "je demande des preuves.", "value": "Analytique" },
+        { "letter": "D", "text": "je réagis de façon impulsive.", "value": "Expressif" }
+      ]
+    },
+    {
+      "title": "J'ai rempli ce questionnaire…",
+      "choices": [
+        { "letter": "A", "text": "en essayant d'analyser mon comportement le plus justement possible.", "value": "Aimable" },
+        { "letter": "B", "text": "en m'interrogeant sur sa valeur scientifique.", "value": "Analytique" },
+        { "letter": "C", "text": "de façon insouciante.", "value": "Expressif" },
+        { "letter": "D", "text": "rapidement sans me poser de questions.", "value": "Directif" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créateur de questionnaire</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Créateur de questionnaire</h1>
+        <p class="hint">Modifie les questions, puis exporte en JSON pour remplacer assets/data.json.</p>
+      </div>
+      <div class="actions">
+        <button id="themeToggle" type="button">🌙 Mode sombre</button>
+        <button id="loadDefault" class="soft">Charger assets/data.json</button>
+        <button id="importJson">Importer un JSON</button>
+        <input id="fileInput" type="file" accept="application/json" hidden>
+        <button id="addQuestion" class="primary">+ Ajouter une question</button>
+      </div>
+    </div>
+
+    <div id="questionsRoot"></div>
+
+    <div class="footer">
+      <button id="copyJson">Copier le JSON</button>
+      <button id="downloadJson" class="primary">Télécharger data.json</button>
+      <button id="previewJson">Aperçu JSON</button>
+      <span id="status" class="status">Prêt</span>
+    </div>
+
+    <div class="json-output" id="jsonOutputWrap" hidden>
+      <label for="jsonOutput">Aperçu JSON</label>
+      <textarea id="jsonOutput" readonly></textarea>
+    </div>
+  </div>
+
+  <template id="questionTemplate">
+    <div class="card question-card">
+      <div class="question-header">
+        <div class="question-title"></div>
+        <div class="question-controls">
+          <button type="button" class="move-up">↑</button>
+          <button type="button" class="move-down">↓</button>
+          <button type="button" class="danger remove-question">Supprimer</button>
+        </div>
+      </div>
+      <div>
+        <label>Texte de la question</label>
+        <textarea class="q-title"></textarea>
+      </div>
+      <div class="choices-root"></div>
+      <button type="button" class="add-choice">+ Ajouter un choix</button>
+    </div>
+  </template>
+
+  <template id="choiceTemplate">
+    <div class="choice-grid">
+      <div>
+        <label>Lettre</label>
+        <div class="choice-letter-badge c-letter"></div>
+      </div>
+      <div>
+        <label>Texte</label>
+        <input class="c-text" type="text">
+      </div>
+      <div>
+        <label>Style</label>
+        <select class="c-value">
+          <option>Analytique</option>
+          <option>Directif</option>
+          <option>Aimable</option>
+          <option>Expressif</option>
+        </select>
+      </div>
+      <div>
+        <label>Actions</label>
+        <div class="choice-actions">
+          <button type="button" class="move-choice-up">↑</button>
+          <button type="button" class="move-choice-down">↓</button>
+          <button type="button" class="danger remove-choice">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
