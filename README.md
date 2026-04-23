@@ -1,5 +1,8 @@
 # Quiz de style de communication
 
+Ce projet permet de faire passer un questionnaire sur les styles de communication et d'obtenir un résultat visuel à la fin.
+Il inclut aussi un petit outil d'édition pour mettre à jour facilement les questions sans modifier le code.
+
 Ce projet contient deux parties :
 
 - `quiz/` : le questionnaire que les participants remplissent
