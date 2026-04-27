@@ -4,6 +4,23 @@
 // - chartInstance: référence du graphique Chart.js courant
 let dataGraph = [0, 0, 0, 0];
 const arrType = ["analytique", "directif", "aimable", "expressif"];
+const STYLE_LABELS = ["Analytique", "Directif", "Aimable", "Expressif"];
+const STYLE_DOM_CLASSES = ["analytique", "directif", "aimable", "expressif"];
+const DEFAULT_STYLE_CONFIG = {
+  Analytique: {
+    color: "#36A2EB"
+  },
+  Directif: {
+    color: "#4BC0C0"
+  },
+  Aimable: {
+    color: "#FF9F40"
+  },
+  Expressif: {
+    color: "#FFCD56"
+  }
+};
+let styleConfig = DEFAULT_STYLE_CONFIG;
 let questionCount = 0;
 let chartInstance = null;
 let printChartInstance = null;
@@ -24,6 +41,60 @@ function setStyle(selector, property, value) {
 function formatPercent(value) {
   const rounded = Math.round(value * 10) / 10;
   return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
+function hexToRgba(hexColor, alpha) {
+  if (typeof hexColor !== "string") {
+    return null;
+  }
+
+  const normalized = hexColor.trim().replace(/^#/, "");
+  const isShortHex = normalized.length === 3;
+  const isLongHex = normalized.length === 6;
+  if (!isShortHex && !isLongHex) {
+    return null;
+  }
+
+  const fullHex = isShortHex
+    ? normalized
+        .split("")
+        .map((char) => char + char)
+        .join("")
+    : normalized;
+
+  if (!/^[0-9a-fA-F]{6}$/.test(fullHex)) {
+    return null;
+  }
+
+  const red = parseInt(fullHex.slice(0, 2), 16);
+  const green = parseInt(fullHex.slice(2, 4), 16);
+  const blue = parseInt(fullHex.slice(4, 6), 16);
+  return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+}
+
+function normalizeStyleConfig(rawConfig) {
+  const normalizedConfig = {};
+  STYLE_LABELS.forEach((label) => {
+    const defaults = DEFAULT_STYLE_CONFIG[label];
+    const rawStyle = rawConfig && typeof rawConfig === "object" ? rawConfig[label] : null;
+    const color = rawStyle && typeof rawStyle.color === "string" ? rawStyle.color : defaults.color;
+    const accent = hexToRgba(color, 1) || color || defaults.color;
+    const accentSoft = hexToRgba(color, 0.4) || accent;
+    normalizedConfig[label] = {
+      color,
+      accent,
+      accentSoft
+    };
+  });
+  return normalizedConfig;
+}
+
+function getStyle(label) {
+  return styleConfig[label] || DEFAULT_STYLE_CONFIG[label];
+}
+
+function getChartColors() {
+  return STYLE_LABELS.map((label) => getStyle(label).color);
 }
 
 // Construit dynamiquement une slide-question (titre + 4 choix).
@@ -98,26 +169,16 @@ function indexOfMax(arr) {
 
 // Colore et affiche les colonnes correspondant au style dominant.
 function applyResultTheme(maxIndex) {
-  if (maxIndex === 0) {
-    setStyle(".analytique", "display", "block");
-    setStyle(".votretype", "color", "hsla(204, 82%, 57%, 1)");
-    setStyle(".analytique2", "backgroundColor", "hsla(204, 82%, 57%, .4)");
+  const label = STYLE_LABELS[maxIndex];
+  const domClass = STYLE_DOM_CLASSES[maxIndex];
+  if (!label || !domClass) {
+    return;
   }
-  if (maxIndex === 1) {
-    setStyle(".directif", "display", "block");
-    setStyle(".votretype", "color", "hsla(180, 48%, 52%, 1)");
-    setStyle(".directif2", "backgroundColor", "hsla(180, 48%, 52%, 0.4)");
-  }
-  if (maxIndex === 2) {
-    setStyle(".aimable", "display", "block");
-    setStyle(".votretype", "color", "hsla(30, 100%, 63%, 1)");
-    setStyle(".aimable2", "backgroundColor", "hsla(30, 100%, 63%, 0.5)");
-  }
-  if (maxIndex === 3) {
-    setStyle(".expressif", "display", "block");
-    setStyle(".votretype", "color", "hsla(42, 100%, 67%, 1)");
-    setStyle(".expressif2", "backgroundColor", "hsla(42, 100%, 67%, 0.4)");
-  }
+
+  const style = getStyle(label);
+  setStyle(`.${domClass}`, "display", "block");
+  setStyle(".votretype", "color", style.accent);
+  setStyle(`.${domClass}2`, "backgroundColor", style.accentSoft);
 }
 
 // (Re)génère le graphique de résultat.
@@ -144,12 +205,12 @@ function makeGraph() {
   chartInstance = new Chart(newCanvas, {
     type: "pie",
     data: {
-      labels: ["Analytique", "Directif", "Aimable", "Expressif"],
+      labels: STYLE_LABELS,
       datasets: [
         {
           label: "Votre resultat",
           data: [dataGraph[0], dataGraph[1], dataGraph[2], dataGraph[3]],
-          backgroundColor: ["#36A2EB", "#4BC0C0", "#FF9F40", "#FFCD56"],
+          backgroundColor: getChartColors(),
           borderWidth: 4
         }
       ]
@@ -324,15 +385,13 @@ function buildChartPrintSection() {
 }
 
 function buildScoreSummaryMarkup() {
-  const labels = ["Analytique", "Directif", "Aimable", "Expressif"];
-  const colors = ["#36A2EB", "#4BC0C0", "#FF9F40", "#FFCD56"];
-  const items = labels
+  const items = STYLE_LABELS
     .map((label, index) => {
       const value = Number.isFinite(dataGraph[index]) ? formatPercent(dataGraph[index]) : "0";
       return `
         <li>
           <span class="score-style-label">
-            <i class="score-color-chip" style="background-color: ${colors[index]};"></i>
+            <i class="score-color-chip" style="background-color: ${getStyle(label).color};"></i>
             ${label}
           </span>
           <strong>${value}%</strong>
@@ -377,12 +436,12 @@ function createChartImageDataUrl() {
   tempChartInstance = new Chart(tempCanvas, {
     type: "pie",
     data: {
-      labels: ["Analytique", "Directif", "Aimable", "Expressif"],
+      labels: STYLE_LABELS,
       datasets: [
         {
           label: "Votre resultat",
           data: [dataGraph[0], dataGraph[1], dataGraph[2], dataGraph[3]],
-          backgroundColor: ["#36A2EB", "#4BC0C0", "#FF9F40", "#FFCD56"],
+          backgroundColor: getChartColors(),
           borderWidth: 3
         }
       ]
@@ -666,6 +725,7 @@ fetch("data.json")
     return response.json();
   })
   .then((data) => {
+    styleConfig = normalizeStyleConfig(data.styles);
     const questions = data.questions || [];
     questionCount = questions.length;
     renderQuestions(questions);

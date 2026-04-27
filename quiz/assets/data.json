@@ -1,4 +1,18 @@
 {
+  "styles": {
+    "Analytique": {
+      "color": "#36A2EB"
+    },
+    "Directif": {
+      "color": "#4BC0C0"
+    },
+    "Aimable": {
+      "color": "#FF9F40"
+    },
+    "Expressif": {
+      "color": "#FFCD56"
+    }
+  },
   "questions": [
     {
       "title": "Quand je suis à mon meilleur, mon interlocuteur me décrirait comme une personne qui est…",
