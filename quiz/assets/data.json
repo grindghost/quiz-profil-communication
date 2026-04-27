@@ -1,16 +1,16 @@
 {
   "styles": {
     "Analytique": {
-      "color": "#36A2EB"
+      "color": "#80cff2"
     },
     "Directif": {
-      "color": "#4BC0C0"
+      "color": "#f2828a"
     },
     "Aimable": {
-      "color": "#FF9F40"
+      "color": "#51a27e"
     },
     "Expressif": {
-      "color": "#FFCD56"
+      "color": "#ffe081"
     }
   },
   "questions": [
